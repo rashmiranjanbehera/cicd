@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CICD Sample selenium of IndianEagle"  verbose="1"  >
+  <test name="Test One">
+    <classes>
+      <class name="com.indianeagle.impl.VisitorsMedicalInsuranceTest"/>
+      <!--<class name="com.indianeagle.impl.CicdSampleTest" />-->
+     <!-- <methods>
+        <include name = "sampleTest1"/>
+        <include name = "sampleTest2"/>
+        <include name = "sampleTest3"/>
+      </methods>-->
+    </classes>
+  </test>
+</suite>

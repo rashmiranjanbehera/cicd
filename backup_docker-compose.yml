@@ -1,0 +1,35 @@
+# To start Docker in Swarm mode, you need to run `docker swarm init`
+# To deploy the Grid, `docker stack deploy -c docker-compose.yml grid`
+# Stop with `docker stack rm grid`
+
+version: '3.7'
+
+services:
+  selenium-hub:
+   image: selenium/hub:latest
+   ports:
+     - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:latest
+    environment:
+      HUB_HOST: selenium-hub
+    deploy:
+        replicas: 1
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+
+  firefox:
+    image: selenium/node-firefox:latest
+    environment:
+      HUB_HOST: selenium-hub
+    deploy:
+        replicas: 1
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
+
+  opera:
+    image: selenium/node-opera:latest
+    environment:
+      HUB_HOST: selenium-hub
+    deploy:
+        replicas: 1
+    entrypoint: bash -c 'SE_OPTS="-host $$HOSTNAME" /opt/bin/entry_point.sh'
