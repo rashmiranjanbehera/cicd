@@ -24,7 +24,7 @@ public class VisitorsMedicalInsurancePurchasedTest {
 
     @BeforeClass
     public void startDocker() throws IOException, InterruptedException {
-        String url = "www.indianeagle.com/insurance/survey?id=tOvLv8x+uAQvJ6xJ3ihGIg==";
+        String url = "www.indianeagle.com/insurance/survey?id=zQJcojcMU5iYmx0MFojav8PUSmczWBMj";
         remoteWebDriver=linuxDocker.launch(url);
         /*local_setup_dockerGrid.startDockerGrid();
         remoteWebDriver = windowsDocker.launchCrome(url);*/
@@ -36,27 +36,27 @@ public class VisitorsMedicalInsurancePurchasedTest {
         //local_setup_dockerGrid.stopDockerGrid();
     }
 
-    @Test
+    @Test(priority = 1)
     public void testIsPageLoad() throws MalformedURLException {
         assertTrue(visitorsMedicalInsurance.isPageLoad(remoteWebDriver), "verify Visitor Insurance Evaluation page landed");
     }
 
-    @Test
+    @Test(priority = 2)
     public void testVerifyQuestionOne() {
         assertTrue(visitorsMedicalInsurance.verifyQuestionOne(remoteWebDriver), "verify the First question");
     }
 
-    @Test
+    @Test(priority = 3)
     public void testVerifyQuestionTwo() {
         assertTrue(visitorsMedicalInsurance.verifyQuestionTwo(remoteWebDriver), "Verify the Second question");
     }
 
-    @Test
+    @Test(priority = 4)
     public void testVerifyQuestionThree() {
         assertTrue(visitorsMedicalInsurance.verifyQuestionThree(remoteWebDriver),"Verify the third question");
     }
 
-    @Test
+    @Test(priority = 5)
     public void testSubmitFeedback() throws InterruptedException {
         assertTrue(visitorsMedicalInsurance.submitFeedback(remoteWebDriver), "Verify the submition part.");
     }
