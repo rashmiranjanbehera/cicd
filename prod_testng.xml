@@ -2,7 +2,8 @@
 <suite name="CICD Sample selenium of IndianEagle"  verbose="1"  >
   <test name="Test One">
     <classes>
-      <class name="com.indianeagle.impl.VisitorsMedicalInsuranceTest" />
+      <class name="com.indianeagle.impl.VisitorsMedicalInsurancePurchasedTest" />
+      <class name="com.indianeagle.impl.VisitorsMedicalInsuranceNotPurchasedTest" />
     </classes>
   </test>
 </suite>
